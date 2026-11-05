@@ -1,0 +1,171 @@
+/* 颜色、字体和页面宽度统一在这里调整；不依赖外部字体。 */
+:root {
+  --background: #f7f8fa;
+  --surface: #fff;
+  --text: #25303b;
+  --muted: #647180;
+  --accent: #246397;
+  --accent-dark: #174b76;
+  --accent-soft: #eff5fa;
+  --line: #e4e9ee;
+  --max-width: 1040px;
+  --anchor-offset: 100px;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--anchor-offset); }
+body { margin: 0; background: var(--background); color: var(--text); font: 15.5px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: 4px; }
+a:hover { color: var(--accent-dark); text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+p, h1, h2, h3, figure { margin: 0; }
+strong { font-weight: 600; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; left: 16px; top: -80px; z-index: 20; padding: 10px 18px; background: var(--surface); border: 1px solid var(--accent); }
+.skip-link:focus { top: 12px; }
+
+/* 顶部导航 */
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--line); }
+.nav-inner { width: calc(100% - 64px); max-width: var(--max-width); min-height: 68px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { color: var(--text); font-family: var(--font-serif); font-size: 23px; letter-spacing: -.6px; white-space: nowrap; }
+.brand:hover { color: var(--accent); text-decoration: none; }
+.brand-dot { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a { padding: 21px 0 19px; border-bottom: 2px solid transparent; color: var(--muted); font-size: 13px; white-space: nowrap; }
+.nav-links a:hover, .nav-links a[aria-current] { color: var(--accent); text-decoration: none; border-bottom-color: var(--accent); }
+.nav-links .nav-cv { color: var(--accent); }
+.nav-cv > span[aria-hidden] { margin-left: 3px; }
+.page-shell { width: calc(100% - 64px); max-width: var(--max-width); margin: 36px auto 0; }
+.panel { margin-bottom: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; }
+
+/* 简介和原图裁切 */
+.profile { padding: 42px 40px 0; }
+.profile-grid { display: grid; grid-template-columns: minmax(0, 1fr) 176px; align-items: start; gap: 44px; }
+h1 { font: 400 40px/1.1 var(--font-serif); letter-spacing: -1.6px; }
+.biography { margin-top: 26px; }
+.biography p + p { margin-top: 15px; }
+.biography strong { font-weight: 600; }
+.biography .personal-note { color: var(--muted); font-size: 14px; }
+.portrait { width: 100%; margin-top: 4px; }
+.portrait-crop { display: block; position: relative; width: 100%; aspect-ratio: 5 / 6; overflow: hidden; background: #edf1f5; border: 4px solid white; border-radius: 3px; box-shadow: 0 0 0 1px var(--line); }
+/* 原图 2048 × 1365：从 (670, 144) 裁出 670 × 804 的头肩区域。 */
+.portrait-crop img { display: block; position: absolute; left: -100%; top: calc(-100% * 144 / 804); width: calc(100% * 2048 / 670); height: auto; max-width: none; }
+.profile-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; margin-top: 28px; padding: 18px 0; border-top: 1px solid var(--line); }
+.contact-link { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; font-size: 13px; overflow-wrap: anywhere; }
+.contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
+.file-label { padding: 1px 4px; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+
+/* 分区标题与论文 */
+.section-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 19px 30px 17px; border-bottom: 1px solid var(--line); }
+h2 { font: 400 23px/1.3 var(--font-serif); letter-spacing: -.35px; }
+.section-note { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.section-body { padding: 28px 30px; }
+.publication-note { max-width: 76ch; margin-bottom: 28px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.paper { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 24px; }
+.paper + .paper { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+.paper-marker { padding-top: 2px; }
+.paper-status { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+.venue { display: inline-block; padding: 3px 8px; border: 1px solid #dce8f2; border-radius: 3px; background: var(--accent-soft); color: var(--accent-dark); font-size: 10.5px; font-weight: 600; letter-spacing: .25px; white-space: nowrap; }
+.venue-working { background: #f5f6f8; border-color: var(--line); color: var(--muted); font-weight: 500; }
+h3 { font-size: 16px; line-height: 1.55; font-weight: 600; letter-spacing: -.15px; }
+.paper h3 a { color: var(--text); }
+.paper h3 a:hover { color: var(--accent); }
+.authors { margin-top: 7px; color: #536170; font-size: 13.5px; line-height: 1.7; }
+.authors strong { color: var(--text); }
+.venue-name { margin-top: 5px; color: var(--muted); font-size: 12px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 7px; font-size: 12px; }
+.paper-links a { display: inline-flex; align-items: center; min-height: 28px; }
+
+/* 教育、奖项、教学和报告 */
+.education-entry { display: flex; justify-content: space-between; gap: 24px; }
+.education-entry + .education-entry { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--line); }
+.education-entry p { margin-top: 4px; font-size: 14px; }
+.education-entry .detail, .detail { color: var(--muted); font-size: 12.5px; }
+.text-muted { color: var(--muted); }
+.date, .education-entry .date { flex-shrink: 0; margin-top: 3px; color: var(--muted); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.award-list { margin: 0; padding: 0; list-style: none; }
+.award-list li { display: flex; justify-content: space-between; gap: 24px; padding-left: 17px; position: relative; font-size: 14px; }
+.award-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 4px; height: 4px; border-radius: 50%; background: #8798a8; }
+.award-list li + li { margin-top: 14px; }
+.award-list time { color: var(--muted); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.subheading { color: #435262; font-size: 13px; }
+.teaching-list { margin: 18px 0 0; padding: 0; list-style: none; }
+.teaching-list li { display: flex; justify-content: space-between; gap: 20px; font-size: 14px; }
+.teaching-list li + li { margin-top: 20px; }
+.teaching-list p { margin-top: 2px; color: var(--muted); font-size: 12.5px; }
+.academic-service { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.talk-row { display: flex; justify-content: space-between; gap: 24px; }
+.talk-row .detail { margin-top: 5px; }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 8px 2px 36px; color: var(--muted); font-size: 11px; }
+.site-footer p span { margin: 0 6px; }
+.site-footer a { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; color: var(--muted); white-space: nowrap; }
+
+@media (max-width: 800px) {
+  :root { --anchor-offset: 124px; }
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0; padding-top: 10px; }
+  .brand { font-size: 22px; }
+  .nav-links { width: 100%; justify-content: space-between; gap: 16px; }
+  .nav-links a { padding: 10px 0 12px; font-size: 12px; }
+  .page-shell { margin-top: 24px; }
+  .profile { padding: 32px 30px 0; }
+  .profile-grid { grid-template-columns: minmax(0, 1fr) 124px; gap: 24px 28px; }
+  .profile-copy { display: contents; }
+  .profile-heading { grid-column: 1; grid-row: 1; align-self: center; }
+  .portrait { grid-column: 2; grid-row: 1; margin-top: 0; }
+  .biography { grid-column: 1 / -1; grid-row: 2; margin-top: 0; }
+  h1 { font-size: 42px; }
+  .paper { grid-template-columns: 108px minmax(0, 1fr); gap: 20px; }
+  .education-entry, .talk-row { flex-direction: column; align-items: flex-start; gap: 7px; }
+  .award-list li { gap: 18px; }
+}
+@media (max-width: 560px) {
+  .nav-inner, .page-shell { width: calc(100% - 32px); }
+  .page-shell { margin-top: 20px; }
+  .panel { margin-bottom: 18px; }
+  body { font-size: 14.5px; line-height: 1.8; }
+  .profile { padding: 26px 22px 0; }
+  .profile-grid { grid-template-columns: minmax(0, 1fr) 84px; gap: 24px 18px; }
+  h1 { font-size: 35px; letter-spacing: -1.1px; }
+  .portrait-crop { border-width: 2px; }
+  .profile-contact { gap: 6px 20px; margin-top: 22px; padding: 14px 0; }
+  .contact-link { min-height: 32px; font-size: 12px; gap: 6px; }
+  .section-header { padding: 17px 22px 15px; }
+  h2 { font-size: 21px; }
+  .section-note { font-size: 10px; }
+  .section-body { padding: 23px 22px; }
+  .paper { grid-template-columns: minmax(0, 1fr); gap: 11px; }
+  .paper + .paper { margin-top: 24px; padding-top: 24px; }
+  .paper-marker { display: flex; align-items: center; gap: 10px; padding-top: 0; }
+  .paper-status { margin-top: 0; }
+  h3 { font-size: 15px; }
+  .authors { font-size: 13px; }
+  .publication-note { margin-bottom: 24px; font-size: 11.5px; }
+  .award-list li, .teaching-list li { flex-direction: column; gap: 3px; }
+  .award-list time { font-size: 11.5px; }
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 4px; padding-bottom: 24px; font-size: 10.5px; }
+}
+@media (max-width: 360px) {
+  .nav-inner, .page-shell { width: calc(100% - 24px); }
+  .nav-links { gap: 8px; }
+  .nav-links a { font-size: 11.5px; }
+  .profile { padding: 24px 18px 0; }
+  .profile-grid { grid-template-columns: minmax(0, 1fr) 68px; gap: 22px 14px; }
+  h1 { font-size: 31px; }
+  .section-header, .section-body { padding-inline: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: white; font-size: 11px; }
+  .site-header, .skip-link, .site-footer a { display: none; }
+  .page-shell { width: 100%; max-width: none; margin: 0; }
+  .panel { margin-bottom: 12px; break-inside: avoid; }
+  .profile { padding: 22px 24px 0; }
+  .profile-grid { grid-template-columns: minmax(0, 1fr) 100px; gap: 24px; }
+  .profile-copy { display: block; }
+  .biography { margin-top: 18px; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 19px; }
+  .section-header { padding: 12px 22px; }
+  .section-body { padding: 16px 22px; }
+  a { color: inherit; }
+}
