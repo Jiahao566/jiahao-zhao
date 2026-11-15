@@ -22,8 +22,8 @@
       <a class="brand" href="#home">Jiahao Zhao<span class="brand-dot" aria-hidden="true">.</span></a>
       <div class="nav-links">
         <a href="#home" aria-current="location">Home</a>
-        <a href="#research">Research</a>
         <a href="#education">Education</a>
+        <a href="#research">Research</a>
         <a href="#teaching">Teaching</a>
         <a class="nav-cv" href="assets/Jiahao_Zhao_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span><span class="sr-only"> (PDF, opens in a new tab)</span></a>
       </div>
@@ -66,29 +66,34 @@
       </div>
     </section>
 
-    <!-- 02 / 研究：复制一个 article.paper 即可增加一篇论文。 -->
-    <div id="research" class="research-group">
-      <section class="panel" aria-labelledby="working-title">
-        <div class="section-header"><h2 id="working-title">Working Papers</h2><span class="section-note">In progress</span></div>
-        <div class="section-body">
-          <article class="paper working-paper">
-            <div class="paper-marker"><span class="venue venue-working">Under Review</span></div>
-            <div class="paper-content">
-              <h3><a href="https://arxiv.org/abs/2611.11133">Online Correlated Exponential Clocks</a></h3>
-              <p class="authors"><a href="https://i.cs.hku.hk/~zhiyi/">Zhiyi Huang</a>, <a href="https://sites.gatech.edu/kpatton33/">Kalen Patton</a>, Peilin Yang, <strong><a href="#home">Jiahao Zhao</a></strong></p>
-              <div class="paper-links"><a href="https://arxiv.org/abs/2611.11133">[arXiv]</a></div>
-            </div>
-          </article>
-        </div>
-      </section>
+    <!-- 02 / 教育经历 -->
+    <section id="education" class="panel" aria-labelledby="education-title">
+      <div class="section-header"><h2 id="education-title">Education</h2></div>
+      <div class="section-body education-list">
+        <article class="education-entry">
+          <!-- 校徽来源：https://www.hku.hk/en/about-hku/university-identity/background -->
+          <img class="education-logo" src="assets/hku-crest.webp" alt="The University of Hong Kong crest" width="64" height="64" loading="lazy" decoding="async">
+          <div class="education-content"><h3>The University of Hong Kong</h3><p>Ph.D. in Computer Science <span class="text-muted">· Hong Kong</span></p><p class="detail">Supervisor: <a href="https://i.cs.hku.hk/~zhiyi/">Prof. Zhiyi Huang</a></p></div>
+          <p class="date">Sep. 2024 — Present</p>
+        </article>
+        <article class="education-entry">
+          <!-- 校徽来源：https://vi.sjtu.edu.cn/index.php/articles/bulletin/13 -->
+          <img class="education-logo" src="assets/sjtu-crest.png" alt="Shanghai Jiao Tong University crest" width="64" height="64" loading="lazy" decoding="async">
+          <div class="education-content"><h3>Shanghai Jiao Tong University</h3><p>B.Eng. in Information Security (IEEE Pilot Class) <span class="text-muted">· Shanghai</span></p><p class="detail">Supervisor: <a href="http://www.zyhwtc.com/">Prof. Yuhao Zhang</a></p><p class="detail">Thesis: Research on Online Algorithms with Theoretical Guarantees</p></div>
+          <p class="date">Sep. 2020 — Jun. 2024</p>
+        </article>
+      </div>
+    </section>
 
+    <!-- 03 / 研究：复制一个 article.paper 即可增加一篇论文。 -->
+    <div id="research" class="research-group">
       <section id="publications" class="panel" aria-labelledby="publications-title">
         <div class="section-header"><h2 id="publications-title">Publications</h2></div>
         <div class="section-body">
           <p class="publication-note">Authors are listed alphabetically, following the convention in theoretical computer science, unless stated otherwise.</p>
           <div class="paper-list">
             <article class="paper">
-              <div class="paper-marker"><span class="venue">SODA 2027</div>
+              <div class="paper-marker"><span class="venue">SODA 2027</span></div>
               <div class="paper-content">
                 <h3>Constant-Competitive Online Selfish Load Balancing</h3>
                 <p class="authors"><a href="https://sun-enze.github.io/enze-sun/">Enze Sun</a>, Wenqian Wang, <a href="https://chenyang-1995.github.io/">Chenyang Xu</a>, <a href="http://www.zyhwtc.com/">Yuhao Zhang</a>, <strong><a href="#home">Jiahao Zhao</a></strong></p>
@@ -119,22 +124,21 @@
           </div>
         </div>
       </section>
-    </div>
 
-    <!-- 03 / 教育经历 -->
-    <section id="education" class="panel" aria-labelledby="education-title">
-      <div class="section-header"><h2 id="education-title">Education</h2></div>
-      <div class="section-body education-list">
-        <article class="education-entry">
-          <div><h3>The University of Hong Kong</h3><p>Ph.D. in Computer Science <span class="text-muted">· Hong Kong</span></p><p class="detail">Supervisor: <a href="https://i.cs.hku.hk/~zhiyi/">Prof. Zhiyi Huang</a></p></div>
-          <p class="date">Sep. 2024 — Present</p>
-        </article>
-        <article class="education-entry">
-          <div><h3>Shanghai Jiao Tong University</h3><p>B.Eng. in Information Security (IEEE Pilot Class) <span class="text-muted">· Shanghai</span></p><p class="detail">Supervisor: <a href="http://www.zyhwtc.com/">Prof. Yuhao Zhang</a></p><p class="detail">Thesis: Research on Online Algorithms with Theoretical Guarantees</p></div>
-          <p class="date">Sep. 2020 — Jun. 2024</p>
-        </article>
-      </div>
-    </section>
+      <section class="panel" aria-labelledby="working-title">
+        <div class="section-header"><h2 id="working-title">Working Papers</h2><span class="section-note">In progress</span></div>
+        <div class="section-body">
+          <article class="paper working-paper">
+            <div class="paper-marker"><span class="venue venue-working">Under Review</span></div>
+            <div class="paper-content">
+              <h3><a href="https://arxiv.org/abs/2611.11133">Online Correlated Exponential Clocks</a></h3>
+              <p class="authors"><a href="https://i.cs.hku.hk/~zhiyi/">Zhiyi Huang</a>, <a href="https://sites.gatech.edu/kpatton33/">Kalen Patton</a>, Peilin Yang, <strong><a href="#home">Jiahao Zhao</a></strong></p>
+              <div class="paper-links"><a href="https://arxiv.org/abs/2611.11133">[arXiv]</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
 
     <!-- 04 / 荣誉奖励 -->
     <section id="awards" class="panel" aria-labelledby="awards-title">
